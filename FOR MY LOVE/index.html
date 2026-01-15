@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Yui! 💖</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Outfit:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Welcome Screen -->
+    <div id="welcome-screen" class="welcome-screen">
+        <div class="content flex-center">
+            <h1 class="script-font">For Yui</h1>
+            <p>Please turn up your volume 🔊</p>
+            <button class="enter-btn" onclick="enterSite()">Tap to Enter</button>
+        </div>
+    </div>
+
+    <!-- Hidden Audio Player -->
+    <audio id="bg-music" loop style="display: none;">
+        <source src="song.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Floating Background Elements -->
+    <div class="floating-hearts"></div>
+
+    <!-- 1. Landing Page -->
+    <section id="landing" class="screen flex-center">
+        <div class="content fade-in-up paused">
+            <h1 class="script-font main-title">Happy Birthday, <br> My Love 🎂💖</h1>
+            <p class="subtext">I made this just for you.</p>
+        </div>
+        <div class="scroll-indicator">
+            <p style="font-size: 0.9rem; margin-bottom: 0.5rem; opacity: 0.8;">(Stay for the song 🎶)</p>
+            <span>Scroll Down</span>
+            <div class="arrow">↓</div>
+        </div>
+    </section>
+
+    <!-- 2. Birthday Letter Section -->
+    <section id="letter" class="screen">
+        <div class="letter-wrapper">
+            <div class="container glass-card fade-on-scroll">
+                <h2 class="script-font">Dearest Yui,</h2>
+                <div class="letter-body">
+                    <p>Hey babe, I hope you like this little website that I made.</p>
+                    <p>First thing first, <strong>Happy Birthday!</strong> I wish nothing but the best for you (cause
+                        you
+                        deserve it). Thank you for being born, cause if you didn't, I don't know how I would live my
+                        life
+                        right now.</p>
+                    <p>I LOVE YOU SO SO SO SO MUCH. I know that your situation is not the best right now, but I hope
+                        this
+                        little website helps to cheer you up even a little bit.</p>
+                </div>
+            </div>
+
+            <div class="voice-player-container fade-on-scroll">
+                <div class="tooltip-text">Click For the AI to read it<br>(TOTALLY NOT ME)</div>
+                <!-- Talking Face Animation -->
+                <img id="talking-face" src="face.png" onclick="toggleVoiceMessage()"
+                    style="display: none; height: 120px; cursor: pointer; transition: transform 0.2s;"
+                    alt="Talking Face">
+
+                <button id="play-btn-wrapper" class="big-play-btn" onclick="toggleVoiceMessage()">
+                    <span id="voice-icon">▶</span>
+                </button>
+                <div class="hover-hint">Hover Me!</div>
+            </div>
+        </div>
+
+        <audio id="voice-msg" onended="onVoiceEnd()">
+            <source src="recording.mp3" type="audio/mpeg">
+        </audio>
+    </section>
+
+
+    <!-- 3. Why You’re Special Section -->
+    <section id="reasons" class="screen">
+        <h2 class="script-font title-center fade-on-scroll">Why You're Special</h2>
+        <div class="reasons-list">
+            <div class="reason-card fade-on-scroll">
+                <span class="icon">✨</span>
+                <p>You accept me for being me.</p>
+            </div>
+            <div class="reason-card fade-on-scroll" style="transition-delay: 0.2s;">
+                <span class="icon">🌱</span>
+                <p>You help me to be a better person.</p>
+            </div>
+            <div class="reason-card fade-on-scroll" style="transition-delay: 0.4s;">
+                <span class="icon">💬</span>
+                <p>You always make me happy whenever you chat with me.</p>
+            </div>
+            <div class="reason-card fade-on-scroll" style="transition-delay: 0.6s;">
+                <span class="icon">💎</span>
+                <p>You're humble with your riches.</p>
+            </div>
+            <div class="reason-card fade-on-scroll special-reason" style="transition-delay: 0.8s;">
+                <span class="icon">❤️</span>
+                <p>And last but not the least, you're special because you are you. You don't shy away from our
+                    relationship, you fight for yourself, and I love you Yui.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Virtual Gift Section -->
+    <section id="gift" class="screen flex-center">
+        <div class="gift-container fade-on-scroll">
+            <h2 class="script-font">A Surprise For You</h2>
+            <p>Click the box to open!</p>
+            <div class="gift-box" onclick="openGift()">
+                <div class="lid"></div>
+                <div class="box"></div>
+            </div>
+            <div id="gift-content" class="hidden">
+                <div class="flower-container" style="margin-top: 2rem;">
+                    <!-- Red Gerbera -->
+                    <div class="flower-card">
+                        <div class="flower-icon red">🌸</div>
+                        <h3>Red Gerbera</h3>
+                        <p>"The red Gerbera sets ablaze the flames of love and passion."</p>
+                        <p class="small">"You are the fire in my heart."</p>
+                    </div>
+
+                    <!-- Purple Gerbera -->
+                    <div class="flower-card" style="transition-delay: 0.2s;">
+                        <div class="flower-icon purple">🌸</div>
+                        <h3>Purple Gerbera</h3>
+                        <p>"The purple gerbera flower is a symbol of elegance and pride."</p>
+                        <p class="small">You are my queen and my beautiful mystery.</p>
+                    </div>
+
+                    <!-- Orange Gerbera -->
+                    <div class="flower-card" style="transition-delay: 0.4s;">
+                        <div class="flower-icon orange">🌸</div>
+                        <h3>Orange Gerbera</h3>
+                        <p>"The orange gerbera flower symbolizes warmth, joy, and enthusiasm."</p>
+                        <p class="small">You brighten my dark days.</p>
+                    </div>
+                </div>
+
+                <div class="meaning-card glass-card" style="margin-top: 1rem; text-align: center;">
+                    <h3 class="script-font" style="color: var(--dark-pink);">Why Three Flowers?</h3>
+                    <p>In the language of flowers, gifting <strong>three</strong> signifies:</p>
+                    <p style="font-size: 1.5rem; font-weight: bold; margin-top: 10px; color: var(--dark-pink);">"I Love
+                        You"</p>
+
+                    <div style="margin-top: 2rem; border-top: 1px dashed var(--primary-pink); padding-top: 1rem;">
+                        <h3>My Promise 💍</h3>
+                        <p>I promise to always be by your side, through think and thin. <br>No matter what happens, you
+                            will never be alone.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final Message Section -->
+    <section id="final" class="screen flex-center">
+        <div class="final-content fade-on-scroll">
+            <h1 class="script-font">Happy Birthday, <br> today and always.</h1>
+            <p>I love you, Yui.</p>
+            <button class="replay-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">Read Again ↻</button>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
